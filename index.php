@@ -9,6 +9,7 @@
     <div class="container">
       <form>
         <div class="form-group">
+          <label for="nom">Nombre: </label>
           <input type="text" placeholder="Nombre" name="nom" id="nom" value="" class="form-control">
         </div>
       </form>
