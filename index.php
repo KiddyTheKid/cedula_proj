@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <title>Inicio</title>
   </head>
-  <body>
-    <div class="container">
+  <body class="body titulo">
+    <div class="container translayer" style="margin-top: 15%;">
       <h1 class="titulo" style="text-align: center;">Crea tu cédula ficticia</h1>
       <form>
         <div class="row">
