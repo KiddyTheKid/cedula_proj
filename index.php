@@ -10,22 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <title>Inicio</title>
-    <!-- <script>
-    $(function(){
-      $("#button").click(function(){
-        var nombre = $("#nom").val();
-        var apellido = $("#ape").val();
-        $.post('php/reg.php',{nom:nombre, ape:apellido}, function(data){
-          if (data != ''){
-            // $("#nom").value(data);
-            $("#prueba").html(data);
-            // document.getElementById("nom").value = data;
-            // setTimeout(function(){message_status.hide()},1000);
-          }
-        });
-      });
-    });
-    </script> -->
     <script language="javascript" src="js/jquery-1.9.1.min.js"></script>
     <script language="javascript" src="js/jquery-1.4.2.min.js"></script>
     <script language="javascript">
@@ -39,6 +23,7 @@
             $('#alertas').html(data);
             document.getElementById("nom").value = "";
             document.getElementById("ape").value = "";
+            document.getElementById("correo").value = "";
           }
         })
         return false;
@@ -47,6 +32,51 @@
     </script>
   </head>
   <body class="body titulo">
+        <!-- Button trigger modal -->
+    <button name="boton" id="boton" style="display: none;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document" style="max-width: 50%;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Fotografia</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="container">
+              <video autoplay="true" id="videoElement">
+                <script>
+                var video = document.querySelector("#videoElement");
+
+                navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+
+                if (navigator.getUserMedia) {
+                    navigator.getUserMedia({video: true}, handleVideo, videoError);
+                }
+
+                function handleVideo(stream) {
+                    video.src = window.URL.createObjectURL(stream);
+                }
+
+                function videoError(e) {
+                    // do something
+                }
+                </script>
+              </video>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container translayer" style="margin-top: 15%;">
       <div id="alertas"></div>
       <h1 class="titulo" style="text-align: center;">Crea tu cédula ficticia</h1>
@@ -82,7 +112,7 @@
           </div>
           <div class="col">
             <div class="form-group">
-              <input type="email" name="correo" class="form-control" placeholder="chichico@chichi.co" value="">
+              <input type="email" name="correo" id="correo" class="form-control" placeholder="chichico@chichi.co" value="">
             </div>
           </div>
         </div>
@@ -90,7 +120,7 @@
         <div class="row">
           <div class="col">
             <div class="form-group">
-              <button type="submit" id="button" class="btn btn-primary" name="button">Aceptar</button>
+              <button type="submit" id="button" onclick="document.getElementById('boton').click();" class="btn btn-primary" name="button">Aceptar</button>
             </div>
           </div>
         </div>
