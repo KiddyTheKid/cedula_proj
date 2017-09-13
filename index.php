@@ -106,7 +106,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <select class="custom-select" name="sexo" id="sexo">
+              <label for="sexo"></label><select class="custom-select" name="sexo" id="sexo">
               <option selected value="1">Masculino</option>
               <option value="0">Femenino</option>
             </select>
