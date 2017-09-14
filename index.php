@@ -10,27 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <title>Inicio</title>
-    <script type="text/javascript" src="js/prueba.js"></script>
     <script language="javascript" src="js/jquery-1.9.1.min.js"></script>
     <script language="javascript" src="js/jquery-1.4.2.min.js"></script>
-    <script language="javascript">
-    $(document).ready(function() {
-      $('#form').submit(function() {
-        $.ajax({
-          type: 'POST',
-          url: $(this).attr('action'),
-          data: $(this).serialize(),
-          success: function(data) {
-            $('#alertas').html(data);
-            document.getElementById("nom").value = "";
-            document.getElementById("ape").value = "";
-            document.getElementById("correo").value = "";
-          }
-        })
-        return false;
-      });
-    });
-    </script>
+    <script language="javascript" src="js/formulario.js"></script>
   </head>
   <body class="body titulo">
         <!-- Button trigger modal -->
@@ -73,7 +55,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <button type="button" id="captura" name="captura" class="btn btn-primary">Tomar Foto</button>
+            <button type="button" id="snap" name="captura" class="btn btn-primary">Tomar Foto</button>
           </div>
         </div>
       </div>
