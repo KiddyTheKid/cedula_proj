@@ -14,7 +14,7 @@
     <script language="javascript" src="js/jquery-1.4.2.min.js"></script>
     <script language="javascript" src="js/formulario.js"></script>
   </head>
-  <body class="body titulo">
+  <body class="body titulo" onload="init();">
         <!-- Button trigger modal -->
     <button name="boton" id="boton" style="display: none;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       Launch demo modal
@@ -22,7 +22,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document" style="max-width: 50%;">
+      <div class="modal-dialog" role="document" style="max-width: 32%;">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Fotografia</h5>
@@ -32,30 +32,13 @@
           </div>
           <div class="modal-body">
             <div id="container">
-              <video autoplay="true" id="videoElement">
-                <script>
-                var video = document.querySelector("#videoElement");
-
-                navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
-
-                if (navigator.getUserMedia) {
-                    navigator.getUserMedia({video: true}, handleVideo, videoError);
-                }
-
-                function handleVideo(stream) {
-                    video.src = window.URL.createObjectURL(stream);
-                }
-
-                function videoError(e) {
-                    // do something
-                }
-                </script>
-              </video>
+                <video style="" onclick="snapshot(this);" width=400 height=400 id="video" controls autoplay></video>
+                <canvas style="display: none;"  id="myCanvas" width="400" height="310"></canvas>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <button type="button" id="snap" name="captura" class="btn btn-primary">Tomar Foto</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button id="botona" type="button" onclick="snapshot(); stopWebcam();" class="btn btn-primary">Tomar Foto</button>
           </div>
         </div>
       </div>
@@ -88,7 +71,7 @@
         </div>
         <div class="row">
           <div class="col">
-              <label for="sexo"></label><select class="custom-select" name="sexo" id="sexo">
+              <select class="custom-select" name="sexo" id="sexo">
               <option selected value="1">Masculino</option>
               <option value="0">Femenino</option>
             </select>
@@ -103,7 +86,7 @@
         <div class="row">
           <div class="col">
             <div class="form-group">
-              <button type="submit" id="button" onclick="document.getElementById('boton').click();" class="btn btn-primary" name="button">Aceptar</button>
+              <button type="submit" id="button" onclick="document.getElementById('boton').click(); startWebcam();" class="btn btn-primary" name="button">Aceptar</button>
             </div>
           </div>
         </div>
