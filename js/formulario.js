@@ -8,7 +8,7 @@ $(document).ready(function() {
                 $('#alertas').html(data);
                 document.getElementById("nom").value = "";
                 document.getElementById("ape").value = "";
-                document.getElementById("correo").value = "";
+                document.getElementById("email").value = "";
             }
         })
         return false;

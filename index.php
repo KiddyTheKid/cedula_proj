@@ -78,7 +78,7 @@
           </div>
           <div class="col">
             <div class="form-group">
-              <input type="email" name="correo" id="correo" class="form-control" placeholder="chichico@chichi.co" value="">
+              <input type="email" name="email" id="email" class="form-control" placeholder="chichico@chichi.co" value="">
             </div>
           </div>
         </div>
